@@ -33,7 +33,8 @@ public class AppDemo1 {
         capabilities.setCapability("platformVersion", "5.1.1");
         capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("appPackage", "com.qianmi.bolt");
-        //  capabilities.setCapability("appActivity", ".ContactManager");
+        //capabilities.setCapability("appActivity", ".ContactManager");
+        capabilities.setCapability("appActivity", "com.qianmi.bolt");
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
