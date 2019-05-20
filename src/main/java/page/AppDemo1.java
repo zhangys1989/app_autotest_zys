@@ -24,14 +24,15 @@ public class AppDemo1 {
         // set up appium
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "apps");
-        File app = new File(appDir, "IPTV EPG V100R003C03LCOE94B016_aPhone_Debug.apk");
+        File app = new File(appDir, "com.qianmi.bolt-master-584-dinghuo-debug.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName","Android Emulator");
-        capabilities.setCapability("platformVersion", "8.0.0");
+        //capabilities.setCapability("deviceName","Android Emulator");
+        capabilities.setCapability("deviceName","f54cf48d");
+        capabilities.setCapability("platformVersion", "5.1.1");
         capabilities.setCapability("app", app.getAbsolutePath());
-        capabilities.setCapability("appPackage", "com.huawei.etb");
+        capabilities.setCapability("appPackage", "com.qianmi.bolt");
         //  capabilities.setCapability("appActivity", ".ContactManager");
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
@@ -44,7 +45,7 @@ public class AppDemo1 {
     @Test
     public void Etbtest1(){
 
-        driver.resetApp();
+      //  driver.resetApp();
         waitAction(50000);
      /*   List<WebElement> textFieldsList = driver.findElementsByClassName("android.widget.EditText");
         System.out.println(textFieldsList);
@@ -62,11 +63,11 @@ public class AppDemo1 {
 
 
         //    WebElement el = driver.findElementById("com.huawei.etb:id/edt_loginname");
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+      //  driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         //   WebElement el = driver.findElement(By.id("com.huawei.etb:id/edt_loginname"));
-        WebElement username = driver.findElementByName("Correo Electr��nico");
+       // WebElement username = driver.findElementByName("Correo Electr��nico");
         //	WebElement el = driver.findElementByXPath("//RelativeLayout/LinearLayout[1]/EditText[1]");
-        username.click();
+      /*  username.click();
         waitAction(3000);
         username.sendKeys("finaltest4@etb.com");
         WebElement passwd = driver.findElement(By.id("com.huawei.etb:id/edt_loginpsw"));
